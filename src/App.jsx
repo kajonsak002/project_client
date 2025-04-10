@@ -16,6 +16,7 @@ import NewsController from "./admin/pages/NewsController";
 import ReportAnimals from "./admin/pages/ReportAnimals";
 import ReportProducts from "./admin/pages/ReportProducts";
 import AddGuileBook from "./admin/From/AddGuileBook";
+import CommentReport from "./admin/pages/CommentReport";
 
 function App() {
   const router = createBrowserRouter([
@@ -43,6 +44,7 @@ function App() {
         { path: "/admin/report_animal", element: <ReportAnimals /> },
         { path: "/admin/report_product", element: <ReportProducts /> },
         { path: "/admin/book/add_guild_book", element: <AddGuileBook /> },
+        { path: "/admin/comment_report", element: <CommentReport /> },
       ],
     },
     {

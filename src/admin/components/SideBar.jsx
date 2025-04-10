@@ -92,6 +92,17 @@ const Sidebar = ({ isOpen }) => {
             </span>
           </span>
         </Link>
+        <Link to="comment_report">
+          <span
+            className={`flex items-center p-2 hover:bg-base-200 rounded-lg ml-3 mb-2 ${
+              !isOpen && "justify-center"
+            }`}>
+            <MailWarning size={20} />
+            <span className={`ml-2 ${!isOpen && "hidden"}`}>
+              รายงานความคิดเห็น
+            </span>
+          </span>
+        </Link>
         <Link to="news">
           <span
             className={`flex items-center p-2 hover:bg-base-200 rounded-lg ml-3 mb-2 ${
