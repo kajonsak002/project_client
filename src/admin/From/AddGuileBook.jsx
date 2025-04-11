@@ -7,7 +7,7 @@ function AddGuileBook() {
       <div className="breadcrumbs text-md">
         <ul>
           <li>
-            <a>หน้าเเรก</a>
+            <Link to={"/admin/dashboard"}>หน้าเเรก</Link>
           </li>
           <li>
             <Link to={"/admin/book"}>จัดการคู่มือการเลี้ยงสัตว์</Link>
