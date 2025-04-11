@@ -2,9 +2,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="w-full flex items-center justify-center static h-12 bg-green-700 bottom-0">
-      footer
-    </footer>
+    <>
+      <footer className="bg-[#66BB6A] text-white p-4 flex justify-end items-center">
+        &copy; 2025 เเนวทางการเลี้ยงสัตว์แบบเกษตรอินทรีย์
+      </footer>
+    </>
   );
 }
 
