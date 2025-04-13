@@ -17,6 +17,7 @@ import ReportAnimals from "./admin/pages/ReportAnimals";
 import ReportProducts from "./admin/pages/ReportProducts";
 import AddGuileBook from "./admin/From/AddGuileBook";
 import CommentReport from "./admin/pages/CommentReport";
+import FarmPage from "./pages/FarmPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,7 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         { path: "product", element: <Product /> },
+        { path: "farm", element: <FarmPage /> },
       ],
     },
     {
