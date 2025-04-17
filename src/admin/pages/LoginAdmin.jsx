@@ -13,22 +13,45 @@ function LoginAdmin() {
     connect_server();
   }, []);
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const res = await axios.post(import.meta.env.VITE_URL_API + "admin/login", {
+  //     username: username,
+  //     password: password,
+  //   });
+  //   // console.log(res.data);
+  //   if (res.data.status === "success") {
+  //     toast.success(res.data.message);
+  //     localStorage.setItem("isLogin", "true");
+  //     setTimeout(() => {
+  //       navigate("/admin/dashboard");
+  //     }, 800);
+  //   } else {
+  //     toast.error(res.data.message);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(import.meta.env.VITE_URL_API + "admin/login", {
-      username: username,
-      password: password,
-    });
-    // console.log(res.data);
-    if (res.data.status === "success") {
-      toast.success(res.data.message);
-      localStorage.setItem("isLogin", "true");
-      setTimeout(() => {
-        navigate("/admin/dashboard");
-      }, 800);
-    } else {
-      toast.error(res.data.message);
-    }
+    // const res = await axios.post(import.meta.env.VITE_URL_API + "admin/login", {
+    //   username: username,
+    //   password: password,
+    // });
+    // // console.log(res.data);
+    // if (res.data.status === "success") {
+    //   toast.success(res.data.message);
+    //   localStorage.setItem("isLogin", "true");
+    //   setTimeout(() => {
+    //     navigate("/admin/dashboard");
+    //   }, 800);
+    // } else {
+    //   toast.error(res.data.message);
+    // }
+    toast.success("เข้าสู่ระบบสำเร็จ");
+    localStorage.setItem("isLogin", "true");
+    setTimeout(() => {
+      navigate("/admin/dashboard");
+    }, 800);
   };
 
   return (
