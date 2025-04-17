@@ -1,4 +1,4 @@
-import { CircleDollarSign, Earth, Heart } from "lucide-react";
+import { CircleDollarSign, Earth, Heart, Info, Users } from "lucide-react";
 import React from "react";
 
 function Home() {
@@ -42,7 +42,7 @@ function Home() {
   ]);
 
   return (
-    <div className="min-h-screen bg-[#F9FAFB]">
+    <div className="bg-[#F9FAFB]">
       {/* Hero Section with Banner Image */}
       <div
         className="hero h-[500px]"
@@ -74,10 +74,10 @@ function Home() {
             />
           </div>
           <div className="md:w-1/2 p-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-green-800">
               เกษตรอินทรีย์คืออะไร?
             </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-green-600 leading-relaxed">
               เกษตรอินทรีย์คือวิธีการเลี้ยงสัตว์และปลูกพืชที่เน้นความสมดุลของธรรมชาติ
               โดยหลีกเลี่ยงการใช้สารเคมีสังเคราะห์
               เพื่อสุขภาพที่ดีของทั้งผู้บริโภคและสิ่งแวดล้อม
@@ -91,7 +91,9 @@ function Home() {
       {/* ฟาร์มในระบบ */}
       <div className="mx-2 bg-[#ffffff] rounded-xl shadow my-5 p-5">
         <div className="title p-4">
-          <h1 className="font-bold text-2xl">ฟาร์มทั้งหมด 982 ฟาร์ม</h1>
+          <h1 className="font-bold text-2xl text-green-800">
+            ฟาร์มทั้งหมด <span className="text-green-600">982</span> ฟาร์ม
+          </h1>
         </div>
         <div className="carousel carousel-center p-4 space-x-4 rounded-box overflow-x-auto mx-2">
           {data.map((farm, index) => (
@@ -103,9 +105,12 @@ function Home() {
                   <img src={farm.image} alt={farm.name} />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title">{farm.name}</h2>
+                  <h2 className="card-title text-green-800">{farm.name}</h2>
+                  <p className="text-green-600 mt-[-5px]">Description</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">ดูเพิ่มเติม</button>
+                    <button className="btn btn-primary h-[40px]">
+                      ดูเพิ่มเติม
+                    </button>
                   </div>
                 </div>
               </div>
@@ -115,15 +120,17 @@ function Home() {
       </div>
 
       {/* ประโยชน์ */}
-      <div className="container mx-auto my-16 px-4 ">
-        <h2 className="text-3xl font-bold text-center mb-8">
+      <div className="container mx-auto my-20 px-4 animate-on-scroll">
+        <h2 className="text-3xl font-bold text-center mb-12 text-green-800">
           ประโยชน์ของเกษตรอินทรีย์
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="card bg-white shadow-md ">
-            <div className="card-body items-center">
-              <Heart className="w-10 h-10 mx-auto text-[#16A34A]" />
-              <h3 className="card-title text-xl font-semibold mt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="card bg-white shadow-xl ">
+            <div className="card-body items-center text-center p-8">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                <Heart className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="card-title text-xl font-semibold mt-2 text-green-800">
                 สุขภาพที่ดี
               </h3>
               <p className="text-gray-600 text-center">
@@ -132,10 +139,13 @@ function Home() {
               </p>
             </div>
           </div>
-          <div className="card bg-white shadow-md ">
-            <div className="card-body items-center text-center">
-              <Earth className="w-10 h-10 mx-auto text-[#16A34A]" />
-              <h3 className="card-title text-xl font-semibold mt-2">
+          <div className="card bg-white shadow-xl ">
+            <div className="card-body items-center text-center p-8">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                {/* <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 hover:shadow-2xl transition-all duration-300 border border-green-100 transform hover:-translate-y-2"> */}
+                <Earth className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="card-title text-xl font-semibold mt-2 text-green-800">
                 รักษาสิ่งแวดล้อม
               </h3>
               <p className="text-gray-600 text-center">
@@ -143,10 +153,12 @@ function Home() {
               </p>
             </div>
           </div>
-          <div className="card bg-white shadow-md ">
-            <div className="card-body items-center text-center">
-              <CircleDollarSign className="w-10 h-10 mx-auto text-[#16A34A]" />
-              <h3 className="card-title text-xl font-semibold mt-2">
+          <div className="card bg-white shadow-xl ">
+            <div className="card-body items-center text-center p-8">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                <CircleDollarSign className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="card-title text-xl font-semibold mt-2 text-green-800">
                 เพิ่มมูลค่าผลผลิต
               </h3>
               <p className="text-gray-600 text-center">
@@ -157,49 +169,61 @@ function Home() {
         </div>
       </div>
 
-      {/* News sction */}
-      <div className="w-full bg-[#FFFFFF] h-[500px] p-5">
-        <h2 className="text-3xl font-bold text-center">ข่าวสารต่างๆ</h2>
-        <div className="flex justify-center items-center h-full">
-          <p className="text-5xl text-gray-500">Comming soon</p>
+      {/* News section */}
+      <div className="w-full bg-white h-[600px] p-8 animate-on-scroll">
+        <h2 className="text-3xl font-bold text-center mb-8 text-green-800">
+          ข่าวสารต่างๆ
+        </h2>
+        <div className="flex justify-center items-center h-[400px] bg-green-50 rounded-2xl border-2 border-dashed border-green-200">
+          <div className="text-center">
+            <Info className="w-16 h-16 mx-auto text-green-300 mb-4" />
+            <p className="text-4xl md:text-5xl text-green-300 font-light">
+              Coming soon
+            </p>
+          </div>
         </div>
       </div>
 
       {/* ฟีเจอร์ของระบบ */}
-      <div className="container mx-auto my-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">ฟีเจอร์ของระบบ</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="card bg-white shadow-md hover:shadow-lg transition-shadow">
-            <div className="card-body items-center text-center">
-              <Heart className="w-10 h-10 mx-auto text-[#16A34A]" />
-              <h3 className="card-title text-xl font-semibold mt-2">
+      <div className="container mx-auto my-20 px-4 animate-on-scroll">
+        <h2 className="text-3xl font-bold text-center mb-12 text-green-800">
+          ฟีเจอร์ของระบบ
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="card bg-gradient-to-br from-white to-green-50 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+            <div className="card-body items-center text-center p-8">
+              <Info className="w-12 h-12 mx-auto text-green-600 mb-4" />
+              <h3 className="card-title text-xl font-semibold mt-2 text-green-800">
                 ข้อมูลการเลี้ยงสัตว์
               </h3>
               <p className="text-gray-600 text-center">
                 ให้ข้อมูลแนะนำการเลี้ยงสัตว์แบบเกษตรอินทรีย์เพื่อเป็นแนวทางสำหรับเกษตรกร
               </p>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-green-100 rounded-bl-full opacity-30"></div>
             </div>
           </div>
-          <div className="card bg-white shadow-md hover:shadow-lg transition-shadow">
-            <div className="card-body  items-center text-center">
-              <Earth className="w-10 h-10 mx-auto text-[#16A34A]" />
-              <h3 className="card-title text-xl font-semibold mt-2">
+          <div className="card bg-gradient-to-br from-white to-green-50 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+            <div className="card-body items-center text-center p-8">
+              <CircleDollarSign className="w-12 h-12 mx-auto text-green-600 mb-4" />
+              <h3 className="card-title text-xl font-semibold mt-2 text-green-800">
                 ข้อมูลราคากลางเนื้อสัตว์
               </h3>
               <p className="text-gray-600 text-center">
                 ให้ข้อมูลราคากลางเนื้อสัตว์ ณ วันที่ปัจจุบัน
               </p>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-green-100 rounded-bl-full opacity-30"></div>
             </div>
           </div>
-          <div className="card bg-white shadow-md hover:shadow-lg transition-shadow">
-            <div className="card-body  items-center text-center">
-              <CircleDollarSign className="w-10 h-10 mx-auto text-[#16A34A]" />
-              <h3 className="card-title text-xl font-semibold mt-2">
+          <div className="card bg-gradient-to-br from-white to-green-50 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+            <div className="card-body items-center text-center p-8">
+              <Users className="w-12 h-12 mx-auto text-green-600 mb-4" />
+              <h3 className="card-title text-xl font-semibold mt-2 text-green-800">
                 ระบบชุมชน
               </h3>
               <p className="text-gray-600 text-center">
                 ชุมชนสำหรับแลกเปลี่ยนข้อมูลความรู้ต่างๆ สำหรับสมาชิกที่ลงทะเบียน
               </p>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-green-100 rounded-bl-full opacity-30"></div>
             </div>
           </div>
         </div>
