@@ -20,7 +20,8 @@ import CommentReport from "./admin/pages/CommentReport";
 import FarmPage from "./pages/FarmPage";
 import GuildBook from "./pages/GuildBook";
 import Price from "./pages/Price";
-
+import FarmLayout from "./Layout/FarmLayout";
+import Profile from "./Farm/pages/Profile";
 function App() {
   const router = createBrowserRouter([
     {
@@ -60,6 +61,11 @@ function App() {
         { path: "/admin/book/add_guild_book", element: <AddGuileBook /> },
         { path: "/admin/comment_report", element: <CommentReport /> },
       ],
+    },
+    {
+      path: "/profile",
+      element: <FarmLayout />,
+      children: [{ path: "/profile", element: <Profile /> }],
     },
     {
       path: "admin/login",
