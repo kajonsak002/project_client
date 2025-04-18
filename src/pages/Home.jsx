@@ -108,8 +108,8 @@ function Home() {
                   <h2 className="card-title text-green-800">{farm.name}</h2>
                   <p className="text-green-600 mt-[-5px]">Description</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary h-[40px]">
-                      ดูเพิ่มเติม
+                    <button className="bg-green-600 hover:bg-green-700 text-white rounded-md w-[120px] h-[40px] mt-2 mb-[-10px]">
+                      อ่านเพิ่มเติม
                     </button>
                   </div>
                 </div>

@@ -18,6 +18,8 @@ import ReportProducts from "./admin/pages/ReportProducts";
 import AddGuileBook from "./admin/From/AddGuileBook";
 import CommentReport from "./admin/pages/CommentReport";
 import FarmPage from "./pages/FarmPage";
+import GuildBook from "./pages/GuildBook";
+import Price from "./pages/Price";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +30,16 @@ function App() {
         { path: "/", element: <Home /> },
         { path: "product", element: <Product /> },
         { path: "farm", element: <FarmPage /> },
+        { path: "book", element: <GuildBook /> },
+        { path: "price", element: <Price /> },
+        {
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "register",
+          element: <Register />,
+        },
       ],
     },
     {
@@ -52,14 +64,6 @@ function App() {
     {
       path: "admin/login",
       element: <LoginAdmin />,
-    },
-    {
-      path: "login",
-      element: <Login />,
-    },
-    {
-      path: "register",
-      element: <Register />,
     },
   ]);
   return (

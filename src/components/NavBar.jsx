@@ -16,10 +16,6 @@ function NavBar() {
       path: "price",
     },
     {
-      name: "เเหล่งขายผลิตภัณฑ์",
-      path: "market",
-    },
-    {
       name: "ฟาร์มต่างๆ",
       path: "farm",
     },
