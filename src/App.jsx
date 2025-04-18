@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Layout/RootLayout";
 import Home from "./pages/Home";
-import Product from "./pages/Product";
+import ProductFarm from "./pages/ProductFarm";
 import AdminLayout from "./Layout/AdminLayout";
 import DashBoard from "./admin/pages/DashBoard";
 import UserController from "./admin/pages/UserController";
@@ -22,6 +22,12 @@ import GuildBook from "./pages/GuildBook";
 import Price from "./pages/Price";
 import FarmLayout from "./Layout/FarmLayout";
 import Profile from "./Farm/pages/Profile";
+import Logs from "./Farm/pages/Logs";
+import News from "./Farm/pages/News";
+import Comunity from "./Farm/pages/Comunity";
+import Product from "./Farm/pages/Product";
+import Animal from "./Farm/pages/Animal";
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -29,7 +35,7 @@ function App() {
       element: <RootLayout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "product", element: <Product /> },
+        { path: "product", element: <ProductFarm /> },
         { path: "farm", element: <FarmPage /> },
         { path: "book", element: <GuildBook /> },
         { path: "price", element: <Price /> },
@@ -65,7 +71,14 @@ function App() {
     {
       path: "/profile",
       element: <FarmLayout />,
-      children: [{ path: "/profile", element: <Profile /> }],
+      children: [
+        { path: "/profile", element: <Profile /> },
+        { path: "/profile/product", element: <Product /> },
+        { path: "/profile/animal", element: <Animal /> },
+        { path: "/profile/social", element: <Comunity /> },
+        { path: "/profile/news", element: <News /> },
+        { path: "/profile/logs", element: <Logs /> },
+      ],
     },
     {
       path: "admin/login",

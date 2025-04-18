@@ -25,9 +25,34 @@ const Sidebar = ({ isOpen }) => {
 
   const menuItems = [
     {
-      name: "Dashboard",
+      name: "หน้าเเรก",
       icon: <LayoutDashboard size={20} />,
       path: "/profile",
+    },
+    {
+      name: "จัดการสินค้า",
+      icon: <ChartColumnBig size={20} />,
+      path: "product",
+    },
+    {
+      name: "จัดการสัตว์เลี้ยง",
+      icon: <Users size={20} />,
+      path: "animal",
+    },
+    {
+      name: "ระบบชุมชน",
+      icon: <Newspaper size={20} />,
+      path: "social",
+    },
+    {
+      name: "ข่าวสาร",
+      icon: <MailWarning size={20} />,
+      path: "news",
+    },
+    {
+      name: "บันทึกเหตุการณ์สัตว์",
+      icon: <BookText size={20} />,
+      path: "logs",
     },
   ];
   return (
