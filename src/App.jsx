@@ -17,7 +17,7 @@ import ReportAnimals from "./admin/pages/ReportAnimals";
 import ReportProducts from "./admin/pages/ReportProducts";
 import AddGuileBook from "./admin/From/AddGuileBook";
 import CommentReport from "./admin/pages/CommentReport";
-import FarmPage from "./pages/FarmPage";
+import FarmPage from "./pages/FarmList";
 import GuildBook from "./pages/GuildBook";
 import Price from "./pages/Price";
 import FarmLayout from "./Layout/FarmLayout";
@@ -27,6 +27,7 @@ import News from "./Farm/pages/News";
 import Comunity from "./Farm/pages/Comunity";
 import Product from "./Farm/pages/Product";
 import Animal from "./Farm/pages/Animal";
+import FarmProfile from "./pages/FarmProfile";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,7 +37,7 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         { path: "product", element: <ProductFarm /> },
-        { path: "farm", element: <FarmPage /> },
+        { path: "farmList", element: <FarmPage /> },
         { path: "book", element: <GuildBook /> },
         { path: "price", element: <Price /> },
         {
@@ -46,6 +47,10 @@ function App() {
         {
           path: "register",
           element: <Register />,
+        },
+        {
+          path: "farm",
+          element: <FarmProfile />,
         },
       ],
     },

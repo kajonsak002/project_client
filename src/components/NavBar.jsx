@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const menu = [
     {
       name: "หน้าเเรก",
@@ -17,9 +23,10 @@ function NavBar() {
     },
     {
       name: "ฟาร์มต่างๆ",
-      path: "farm",
+      path: "farmList",
     },
   ];
+
   return (
     <nav className="sticky top-0 z-50">
       <div className="flex justify-between p-4 bg-white drop-shadow-md items-center">
@@ -42,22 +49,67 @@ function NavBar() {
             </svg>
           </p>
         </div>
-        <div className="flex gap-4">
+
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#16A34A"
+              strokeWidth={2}>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div className="hidden md:flex gap-4">
           {menu.map((item, index) => (
             <div key={index}>
               <Link to={item.path}>{item.name}</Link>
             </div>
           ))}
         </div>
-        <div className="flex gap-3">
-          <div className="btn bg-[#16A34A] text-white rounded-2xl w-[150px] h-[50px]">
+
+        <div className="hidden md:flex gap-3">
+          <div className="btn bg-[#16A34A] text-white rounded-2xl w-[150px] h-[50px] flex items-center justify-center">
             <Link to="login">เข้าสู่ระบบ</Link>
           </div>
-          <div className="btn border-[#16A34A] text-[#16A34A] rounded-2xl w-[150px] h-[50px]">
-            <Link to="register"> ลงทะเบียน</Link>
+          <div className="btn border-[#16A34A] text-[#16A34A] rounded-2xl w-[150px] h-[50px] flex items-center justify-center">
+            <Link to="register">ลงทะเบียน</Link>
           </div>
         </div>
       </div>
+      {isMenuOpen && (
+        <div className="md:hidden bg-white drop-shadow-md">
+          <div className="flex flex-col p-4">
+            {menu.map((item, index) => (
+              <div key={index} className="py-2 border-b border-gray-100">
+                <Link to={item.path} onClick={toggleMenu}>
+                  {item.name}
+                </Link>
+              </div>
+            ))}
+            <div className="flex flex-col gap-3 mt-4">
+              <div className="btn bg-[#16A34A] text-white rounded-2xl h-[50px] flex items-center justify-center">
+                <Link to="login" onClick={toggleMenu}>
+                  เข้าสู่ระบบ
+                </Link>
+              </div>
+              <div className="btn border-[#16A34A] text-[#16A34A] border rounded-2xl h-[50px] flex items-center justify-center">
+                <Link to="register" onClick={toggleMenu}>
+                  ลงทะเบียน
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
