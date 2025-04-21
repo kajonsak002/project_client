@@ -33,13 +33,24 @@ function Login() {
               />
             </div>
             <div className="card-actions mt-4 mb-2">
-              <button className="btn btn-primary w-full">เข้าสู่ระบบ</button>
+              <Link to="/profile" className="w-full">
+                <button className="btn bg-[#16A34A] text-white w-full rounded-xl hover:bg-[#15803D]">
+                  เข้าสู่ระบบ
+                </button>
+              </Link>
             </div>
             <div className="flex justify-between">
-              <span className="text-blue-500 underline hover:text-blue-700">
-                <Link to="/register">ลงทะเบียน</Link>
+              <span>
+                ยังไม่มีบัญชีผู้ใช้?{" "}
+                <Link
+                  to="/register"
+                  className="text-blue-500 underline hover:text-blue-700">
+                  ลงทะเบียน
+                </Link>
               </span>
-              <span className="text-blue-500 underline">ลืมรหัสผ่าน</span>
+              <Link to="/forgot_password">
+                <span className="text-blue-500 underline">ลืมรหัสผ่าน</span>
+              </Link>
             </div>
           </form>
         </div>

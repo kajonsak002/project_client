@@ -28,6 +28,7 @@ import Comunity from "./Farm/pages/Comunity";
 import Product from "./Farm/pages/Product";
 import Animal from "./Farm/pages/Animal";
 import FarmProfile from "./pages/FarmProfile";
+import ForGotPass from "./pages/ForGotPass";
 
 function App() {
   const router = createBrowserRouter([
@@ -51,6 +52,10 @@ function App() {
         {
           path: "farm",
           element: <FarmProfile />,
+        },
+        {
+          path: "forgot_password",
+          element: <ForGotPass />,
         },
       ],
     },

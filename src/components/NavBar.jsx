@@ -28,7 +28,7 @@ function NavBar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50">
+    <nav className="fixed w-full top-0 z-50">
       <div className="flex justify-between p-4 bg-white drop-shadow-md items-center">
         <div className="logo">
           <p className="text-2xl font-bold">

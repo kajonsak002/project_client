@@ -99,7 +99,9 @@ function Register() {
               </div>
             </form>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary w-full">ลงทะเบียน</button>
+              <button className="btn bg-[#16A34A] text-white w-full rounded-xl hover:bg-[#15803D]">
+                ลงทะเบียน
+              </button>
             </div>
 
             <div className="flex justify-end">
