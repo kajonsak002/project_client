@@ -164,7 +164,7 @@ function Home() {
       <div className="relative bg-white mx-2 rounded-xl shadow my-10 p-5">
         <div className="flex justify-between items-center mb-4 px-2">
           <h1 className="text-2xl font-bold text-green-800">
-            ฟาร์มทั้งหมด <span className="text-green-600">{data.length}</span>
+            ฟาร์มทั้งหมด <span className="text-green-600">{data.length}</span>{" "}
             ฟาร์ม
           </h1>
         </div>
